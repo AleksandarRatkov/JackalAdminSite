@@ -430,9 +430,11 @@ const routes = [
               import("./views/app/legal/legalcases"),
           },
           {
-            path: "details/:id",
+            path: "legalcases/:id",
+            name: "Details",
+            props: true,
             component: () =>
-              import("./views/app/legal/details"),
+              import("./views/app/legal/Details"),
           }
           ,
           {

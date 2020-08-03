@@ -205,6 +205,12 @@
                     <b-button type="submit" variant="primary" class="mt-4">{{
                       $t("forms.submit")
                     }}</b-button>
+
+                    <router-link to="/app/legal/legalcases">
+                      <b-button variant="danger" class="mt-4">{{
+                        $t("forms.cancel")
+                      }}</b-button>
+                    </router-link>
                   </b-colxx>
                 </b-row>
               </b-form>
@@ -230,27 +236,24 @@ export default {
     "v-select": vSelect,
     datepicker: Datepicker
   },
+  props: ["legalCaseId"],
+  created() {
+    //call Api using legalCaseId
+  },
   data() {
     return {
       details: {
-        id: 8,
-        title: "Cheesecake",
-        img: "/assets/img/cheesecake-thumb.jpg",
-        category: "Cakes",
-        status: "ON HOLD",
-        statusColor: "primary",
-        description: "Delicious vegan chocolate cake",
-        sales: 887,
-        stock: 21,
-        date: "23.07.2020"
-      },
-      direction: getDirection().direction,
-      selectData: [
-        { value: "1", label: "Test1" },
-        { value: "2", label: "Test2" },
-        { value: "3", label: "Test3" },
-        { value: "4", label: "Test4" }
-      ]
+        id: null,
+        title: "",
+        img: "",
+        category: "",
+        status: "",
+        statusColor: "",
+        description: "",
+        sales: null,
+        stock: null,
+        date: null
+      }
     };
   },
   methods: {
@@ -290,3 +293,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.breadcrumb-item .active {
+  display: none;
+}
+</style>
