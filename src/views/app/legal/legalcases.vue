@@ -165,7 +165,10 @@ export default {
     rowClicked(dataItem, event) {
       // const itemId = dataItem.id;
       this.selectedItem = dataItem;
-      this.$router.push({ name: "Details", params: { id: dataItem.id } });
+      this.$router.push({
+        name: "Details",
+        params: { id: dataItem.id }
+      });
 
       //   if (event.shiftKey && this.selectedItems.length > 0) {
       //     let itemsForToggle = this.items;

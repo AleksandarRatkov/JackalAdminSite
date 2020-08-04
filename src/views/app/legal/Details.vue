@@ -236,8 +236,9 @@ export default {
     "v-select": vSelect,
     datepicker: Datepicker
   },
-  props: ["legalCaseId"],
+  props: ["id"],
   created() {
+    console.log(this.id);
     //call Api using legalCaseId
   },
   data() {
